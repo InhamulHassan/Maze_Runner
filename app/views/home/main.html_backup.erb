@@ -1,0 +1,68 @@
+<div id="controller">
+  <h2>Maze Runner</h2>
+  <form id="maze_controls">
+    <div id="grid_controls" class="controls_div">
+      <h5>Maze Grid:</h5>
+      <label for="width">Width<abbr title="required">*</abbr>:</label>
+      <input id="width" name="width" type="number" min="3">
+      <label for="height">Height:</label>
+      <input id="height" name="height" type="number" min="3">
+      <span><abbr title="required">*</abbr> Height if unspecified defaults to the value of width</span>
+    </div>
+    <div id="seed_controls" class="controls_div">
+      <h5>Seed Value:</h5>
+      <label for="seed">Seed:</label> <input id="seed" name="seed" type="number" min="0" step="1" max="10">
+    </div>
+    <div id="button_controls" class="controls_div">
+      <button id="generate">Generate Maze</button>
+      <button id="reset_controls" type="reset">Reset Controls</button>
+    </div>
+    <div id="solve_controls" class="controls_div">
+      <h5>Solve Maze:</h5>
+      <div>
+        <button id="solve" disabled>Solve Maze</button>
+        <button id="solve_step" disabled>Solution Stepper</button>
+      </div>
+    </div>
+  </form>
+</div>
+<div id="maze_grid">
+  <table id="maze_table">
+    <%
+      width = (params[:width].present? ? params[:width] : 0).to_i
+      height = (params[:height].present? ? params[:height] : width || 0).to_i
+      seed = (params[:seed].present? ? params[:seed] : 0).to_i
+
+      height.times do |row| %>
+      <tr>
+        <% width.times do |col| %>
+          <%==
+            i = row * 10 + col + 1
+            if i % 3 == 0
+              "<td class='wall'>#{i}</i>"
+            else
+              "<td class='floor'>#{i}</i>"
+            end
+          %>
+        <% end %>
+      </tr>
+    <%
+      end
+    %>
+  </table>
+</div>
+<div>
+  <%
+    maze = MazeHelper::RecBack.new(width: width, height: height, seed: seed)
+    # maze.carve_passages_from(0, 0)
+    if width & height != 0
+  %>
+    <%=
+      # maze.print_maze
+      maze.grid
+      # logger.info maze.printMaze
+    %>
+  <%
+    end
+  %>
+</div>
