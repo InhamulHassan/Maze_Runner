@@ -2,7 +2,7 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="Rails Maze_Runner: test" uuid="760adc1a-9e86-42d1-a1a6-a694236b34f7">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
       <user-name>root</user-name>
     </data-source>
     <data-source name="Rails Maze_Runner: development" uuid="6d80b383-0e51-4a66-a43d-35b69c722f64">
@@ -15,7 +15,7 @@
       <introspection-schemas>*:@</introspection-schemas>
     </data-source>
     <data-source name="Rails Maze_Runner: production" uuid="e0a3d5cc-20ac-4de0-a4d8-7163b77a22a8">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
       <user-name>Maze_Runner</user-name>
     </data-source>
   </component>
