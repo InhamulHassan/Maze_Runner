@@ -21,7 +21,7 @@
 * Run RubyMine and click Create New Project on the [Welcome Screen][rbmine-ws].
 [rbmine-ws]: https://www.jetbrains.com/help/ruby/welcome-screen.html
 * In the New Project dialog, select Application in the Rails group on the left pane and specify the following settings:
-** Location - Specify a project’s location and name (maze-runner in our case).
-** Ruby SDK - Select a required Ruby interpreter installed on your system.
-** Rails Version - Select a Rails version. If the Rails gem is not installed in the selected SDK, expand the Rails Version dropdown and select Install Rails Gem. In the invoked dialog, select the required Rails version and click Install.
+    * Location - Specify a project’s location and name (maze-runner in our case).
+    * Ruby SDK - Select a required Ruby interpreter installed on your system.
+    * Rails Version - Select a Rails version. If the Rails gem is not installed in the selected SDK, expand the Rails Version dropdown and select Install Rails Gem. In the invoked dialog, select the required Rails version and click Install.
 * After you’ve specified all the options, click Create in the New Project dialog.
