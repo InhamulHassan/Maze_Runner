@@ -49,6 +49,7 @@ class Astar
       @cost = path_cost + estimate
     end
 
+    # A spaceship operator used to easily sort an array
     def <=>(node) #:nodoc:
       cost <=> node.cost
     end
@@ -80,7 +81,7 @@ class Astar
     else
       @open = @open.next
 
-      @visits[current.point[1]][current.point[0]] |= current.under ? 2 : 1
+      @visits[current.point[1]][current.point[0]] |= 1
 
       cell = @maze[current.point[0], current.point[1]]
 
